@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Cinzel');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
 
 .tittle {
     font-family: 'Lobster', cursive;
@@ -38,6 +39,7 @@
 
 .content {
     font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .icon {
@@ -109,4 +111,8 @@
 .imgText {
     text-align: center;
     font-size: 12px;
+}
+
+.formInputs{
+    font-family: 'Work Sans', sans-serif;
 }

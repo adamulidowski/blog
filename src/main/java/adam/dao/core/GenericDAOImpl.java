@@ -2,6 +2,7 @@ package adam.dao.core;
 
 import adam.dao.api.GenericDAO;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
@@ -11,7 +12,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Component
 @Transactional
 public abstract class GenericDAOImpl<T, ID> implements GenericDAO<T, ID> {
 

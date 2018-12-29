@@ -35,8 +35,5 @@
 </bean>
 
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory" />
-    </bean>
-    <bean id="genericDao" abstract="true" class="adam.dao.core.GenericDAOImpl"></bean>
-    <bean id="postDAO" abstract="false" class="adam.dao.core.PostDAOImpl"></bean>
+        <property name="sessionFactory" ref="sessionFactory" /></bean>
 </beans>
