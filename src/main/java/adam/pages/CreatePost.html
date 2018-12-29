@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="animate.css" rel="stylesheet" media="screen">
     <script src="bootstrap.js"></script>
+    <script src="buttons.js"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -26,15 +27,22 @@
 
                 <form wicket:id="newPostForm" class="formInputs">
                     <center>
-                        <br /><br />
+                        <br/><br/>
                         <input wicket:id="newTittle"
                                type="text" class="form-control form-control-custom" name="tittle"
                                placeholder="Tytuł">
-                        <br /><br />
-                        <textarea  wicket:id="newContent" rows="16" name="content" class="form-control"
-                                   placeholder="Treść"></textarea>
-                        <br /><br />
-                        <input type="submit" id="button" name="submit" class="btn btn-outline-secondary"
+                        <br/><br/>
+                        <textarea wicket:id="newContent" rows="16" name="content" class="form-control"
+                                  placeholder="Treść" id="text"></textarea>
+                        <br/>
+                        <input type="button" value="Obraz" id="buttonImg" class="btn btn-outline-dark" />​&nbsp;
+                        <input type="button" value="Podpis" id="buttonImgText" class="btn btn-outline-dark" />​&nbsp;
+                        <input type="button" value="Kod" id="buttonCode" class="btn btn-outline-dark" />​&nbsp;
+                        <input type="button" value="Tab" id="buttonTab" class="btn btn-outline-dark" />​&nbsp;
+                        <input type="button" value="Pogrubienie" id="buttonBold" class="btn btn-outline-dark" />​&nbsp;
+                        <input type="button" value="Pochylenie" id="buttonIt" class="btn btn-outline-dark" />​&nbsp;
+                        <br/><br/>
+                        <input type="submit" id="button" name="submit" class="btn btn-primary btn-lg btn-block"
                                wicket:id="addPost" value="Dodaj"/>
                     </center>
                 </form>
@@ -54,11 +62,5 @@
         </div>
     </div>
 </div>
-
-
-<script src="js/jquery-2.0.3.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.viewportchecker.min.js"></script>
-
 </body>
 </html>

@@ -13,6 +13,10 @@ public class PostFormatter {
             "[OBRAZ]link[/OBRAZ]\n" +
             "[PODPIS]Podpis[/PODPIS]\n" +
             "\n" +
+            "[C]Kod[/C]\n" +
+            "\n" +
+            "[T]Tabulator\n" +
+            "\n" +
             "[B]Pogrubienie[/B]\n" +
             "\n" +
             "[I]Pochylenie[/I]";
@@ -33,18 +37,21 @@ public class PostFormatter {
 
     private String formatOnlyNewLines(String content){
         return content.replaceAll("\r\n", "<br />")
+                .replaceAll("\\[T\\]", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
                 .replaceAll("\\[I\\]", "<i>")
                 .replaceAll("\\[/I\\]", "</i>")
                 .replaceAll("\\[B\\]", "<b>")
-                .replaceAll("\\[/B\\]", "</b>");
+                .replaceAll("\\[/B\\]", "</b>")
+                .replaceAll("\\[C\\]", "<pre>")
+                .replaceAll("\\[/C\\]", "</pre>")
+                .replaceAll("\\[PODPIS\\]", "<p class=\"imgText\">")
+                .replaceAll("\\[/PODPIS\\]", "</p>");
 
     }
 
     private String formatWithImages(String content) {
         return formatOnlyNewLines(content).replaceAll("\r\n", "<br />")
                       .replaceAll("\\[OBRAZ\\]", "<img src=\"")
-                      .replaceAll("\\[/OBRAZ\\]", "\" class=\"postImg\"" + ">")
-                      .replaceAll("\\[PODPIS\\]", "<p class=\"imgText\">")
-                      .replaceAll("\\[/PODPIS\\]", "</p>");
+                      .replaceAll("\\[/OBRAZ\\]", "\" class=\"postImg\"" + ">");
     }
 }
