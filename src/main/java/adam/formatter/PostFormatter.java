@@ -8,19 +8,6 @@ import java.util.Date;
 @Component
 public class PostFormatter {
 
-    public static String DEFAULT_CONTENT = "Przykład:\n" +
-            "\n" +
-            "[OBRAZ]link[/OBRAZ]\n" +
-            "[PODPIS]Podpis[/PODPIS]\n" +
-            "\n" +
-            "[C]Kod[/C]\n" +
-            "\n" +
-            "[T]Tabulator\n" +
-            "\n" +
-            "[B]Pogrubienie[/B]\n" +
-            "\n" +
-            "[I]Pochylenie[/I]";
-
     public PostDTO formatPost(PostDTO postToFormat) {
         return new PostDTO(postToFormat.getTittle(),
                 new Date(),
@@ -42,10 +29,12 @@ public class PostFormatter {
                 .replaceAll("\\[/I\\]", "</i>")
                 .replaceAll("\\[B\\]", "<b>")
                 .replaceAll("\\[/B\\]", "</b>")
-                .replaceAll("\\[C\\]", "<pre class=\"preFormatter\">")
-                .replaceAll("\\[/C\\]", "</pre>")
-                .replaceAll("\\[PODPIS\\]", "<span class=\"imgText\">")
-                .replaceAll("\\[/PODPIS\\]", "</span>")
+                .replaceAll("\\[/C\\]", "</center>")
+                .replaceAll("\\[C\\]", "<center>")
+                .replaceAll("\\[CODE\\]", "<pre class=\"preFormatter\">")
+                .replaceAll("\\[/CODE\\]", "</pre>")
+                .replaceAll("\\[PODPIS\\]", "<p class=\"imgText\">")
+                .replaceAll("\\[/PODPIS\\]", "</p>")
                 .replaceAll("<iframe", "<center><iframe")
                 .replaceAll("</iframe>", "</iframe></center>")
                 .replaceAll("width=\"[0-9]*\"", "width=\"70%\"")

@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     document.getElementById("buttonCode").addEventListener('click', function () {
         var text = document.getElementById('text');
-        text.value += '[C]Miejsce na kod[/C]';
+        text.value += '[CODE]Miejsce na kod[/CODE]';
         text.focus();
     });
 
@@ -32,6 +32,16 @@ $(document).ready(function () {
     document.getElementById("buttonIt").addEventListener('click', function () {
         var text = document.getElementById('text');
         text.value += '[I]Tekst[/I]';
+        text.focus();
+    });
+    document.getElementById("buttonCt").addEventListener('click', function () {
+        var text = document.getElementById('text');
+        text.value += '[C]Tekst[/C]';
+        text.focus();
+    });
+    document.getElementById("buttonURL").addEventListener('click', function () {
+        var text = document.getElementById('text');
+        text.value += '<a href="URL">Tekst</a>';
         text.focus();
     });
 });

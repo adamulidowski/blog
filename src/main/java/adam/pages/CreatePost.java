@@ -14,8 +14,6 @@ import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
-import static adam.formatter.PostFormatter.DEFAULT_CONTENT;
-
 
 public class CreatePost extends WebPage {
 
@@ -37,21 +35,19 @@ public class CreatePost extends WebPage {
 
 
     public CreatePost() {
-
         newPost = new PostDTO();
-        newPost.setContent(DEFAULT_CONTENT);
-        registryForm = new Form<Object>("newPostForm");
+        registryForm = new Form<>("newPostForm");
         initializeMessages();
-        registryForm.add(new TextField<String>("newTittle", new PropertyModel<String>(newPost, "tittle")));
-        registryForm.add(new TextArea<String>("newContent", new PropertyModel<String>(newPost, "content")));
+        registryForm.add(new TextField<>("newTittle", new PropertyModel<String>(newPost, "tittle")));
+        registryForm.add(new TextArea<>("newContent", new PropertyModel<String>(newPost, "content")));
         addSubmitButtonAndSendRegistryForm();
         add(registryForm);
 
     }
 
     private void initializeMessages() {
-        wrongTittle = new Label("wrongTittle", new Model<String>("Tytuł musi posiadać minimum 5 znaków!"));
-        wrongContent = new Label("wrongContent", new Model<String>("Treść musi posiadać minimum 30 znaków!"));
+        wrongTittle = new Label("wrongTittle", new Model<>("Tytuł musi posiadać minimum 5 znaków!"));
+        wrongContent = new Label("wrongContent", new Model<>("Treść musi posiadać minimum 30 znaków!"));
         wrongTittle.setVisible(false);
         wrongContent.setVisible(false);
         registryForm.add(wrongTittle);
@@ -85,5 +81,4 @@ public class CreatePost extends WebPage {
             setResponsePage(HomePage.class);
         }
     }
-
 }
