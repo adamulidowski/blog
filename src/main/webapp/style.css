@@ -92,11 +92,10 @@
     text-decoration: none;
 }
 
-.tableNav a:hover{
+.tableNav a:hover {
     text-decoration: none;
     font-weight: bold;
 }
-
 
 .postImg {
     width: 100%;
@@ -112,6 +111,18 @@
     font-size: 12px;
 }
 
-.formInputs{
+.formInputs {
     font-family: 'Work Sans', sans-serif;
+}
+
+.validation {
+    font-weight: bold;
+    color: rgba(122, 0, 18, 0.92);
+    font-size: 14px;
+}
+
+.preFormatter {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: justify;
 }

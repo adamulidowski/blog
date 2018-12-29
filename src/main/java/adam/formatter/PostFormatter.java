@@ -42,11 +42,14 @@ public class PostFormatter {
                 .replaceAll("\\[/I\\]", "</i>")
                 .replaceAll("\\[B\\]", "<b>")
                 .replaceAll("\\[/B\\]", "</b>")
-                .replaceAll("\\[C\\]", "<pre>")
+                .replaceAll("\\[C\\]", "<pre class=\"preFormatter\">")
                 .replaceAll("\\[/C\\]", "</pre>")
-                .replaceAll("\\[PODPIS\\]", "<p class=\"imgText\">")
-                .replaceAll("\\[/PODPIS\\]", "</p>");
-
+                .replaceAll("\\[PODPIS\\]", "<span class=\"imgText\">")
+                .replaceAll("\\[/PODPIS\\]", "</span>")
+                .replaceAll("<iframe", "<center><iframe")
+                .replaceAll("</iframe>", "</iframe></center>")
+                .replaceAll("width=\"[0-9]*\"", "width=\"70%\"")
+                .replaceAll("height=\"[0-9]*\"", "height=\"350\"");
     }
 
     private String formatWithImages(String content) {

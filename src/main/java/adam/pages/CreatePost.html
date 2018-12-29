@@ -24,29 +24,31 @@
         <div class="row posts">
             <div class="col-md-1 hidden-xs hidden-sm"></div>
             <div class="col-md-10">
-
                 <form wicket:id="newPostForm" class="formInputs">
                     <center>
                         <br/><br/>
                         <input wicket:id="newTittle"
                                type="text" class="form-control form-control-custom" name="tittle"
                                placeholder="Tytuł">
+                        <br/>
+                        <span class="validation" wicket:id="wrongTittle"></span>
                         <br/><br/>
                         <textarea wicket:id="newContent" rows="16" name="content" class="form-control"
                                   placeholder="Treść" id="text"></textarea>
                         <br/>
+                        <span class="validation" wicket:id="wrongContent"></span>
+                        <br/><br/>
                         <input type="button" value="Obraz" id="buttonImg" class="btn btn-outline-dark" />​&nbsp;
                         <input type="button" value="Podpis" id="buttonImgText" class="btn btn-outline-dark" />​&nbsp;
                         <input type="button" value="Kod" id="buttonCode" class="btn btn-outline-dark" />​&nbsp;
                         <input type="button" value="Tab" id="buttonTab" class="btn btn-outline-dark" />​&nbsp;
                         <input type="button" value="Pogrubienie" id="buttonBold" class="btn btn-outline-dark" />​&nbsp;
-                        <input type="button" value="Pochylenie" id="buttonIt" class="btn btn-outline-dark" />​&nbsp;
+                        <input type="button" value="Pochylenie" id="buttonIt" class="btn btn-outline-dark" />​
                         <br/><br/>
                         <input type="submit" id="button" name="submit" class="btn btn-primary btn-lg btn-block"
                                wicket:id="addPost" value="Dodaj"/>
                     </center>
                 </form>
-
             </div>
             <div class="col-md-1 hidden-xs hidden-sm"></div>
         </div>
