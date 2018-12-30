@@ -24,9 +24,7 @@
         <div class="row posts">
             <div class="col-md-1 hidden-xs hidden-sm"></div>
             <div class="col-md-10">
-                <br/>
                 <form wicket:id="newPostForm" class="formInputs">
-                    <span class="formInputName">Tytuł</span>
                     <br/>
                     <input wicket:id="newTittle"
                            type="text" class="formTextArea" name="tittle"
@@ -34,12 +32,10 @@
                     <br/>
                     <span class="validation" wicket:id="wrongTittle"></span>
                     <br/>
-                    <span class="formInputName">Treść</span>
-
                     <textarea style="resize: none;" wicket:id="newContent" rows="13" name="content" class="formTextArea"
                               placeholder="Miejsce na treść (minimum 30 znaków)" id="text"></textarea><br/>
-                    <span class="validation" wicket:id="wrongContent"></span><br />
-                    <center>
+                    <span class="validation" wicket:id="wrongContent"></span> <br/>
+                    <div class="buttons">
                         <input type="button" value="Obraz" id="buttonImg" class="button"/>​
                         <input type="button" value="Podpis" id="buttonImgText" class="button"/>
                         <input type="button" value="Kod" id="buttonCode" class="button"/>​
@@ -48,8 +44,7 @@
                         <input type="button" value="Pochylenie" id="buttonIt" class="button"/>​​
                         <input type="button" value="Wyśrodkowanie" id="buttonCt" class="button"/>
                         <input type="button" value="URL" id="buttonURL" class="button"/>​
-                        <br/><br/>
-                    </center>
+                    </div>
                     <input type="submit" id="button" name="submit" class="buttonAcc" wicket:id="addPost" value="Dodaj"/>
                     <br/><br/>
                 </form>
