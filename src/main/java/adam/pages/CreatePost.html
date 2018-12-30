@@ -16,7 +16,7 @@
 <body>
 <div class="container-fluid">
     <div class="row tittle">
-        <div class="col-xs-12">Junior Developer - Blog</div>
+        <div class="col-xs-12">Nowy Post</div>
     </div>
 
     <!-- -->
@@ -24,32 +24,34 @@
         <div class="row posts">
             <div class="col-md-1 hidden-xs hidden-sm"></div>
             <div class="col-md-10">
+                <br/>
                 <form wicket:id="newPostForm" class="formInputs">
+                    <span class="formInputName">Tytuł</span>
+                    <br/>
+                    <input wicket:id="newTittle"
+                           type="text" class="formTextArea" name="tittle"
+                           placeholder="Tytuł (minimum 5 znaków)">
+                    <br/>
+                    <span class="validation" wicket:id="wrongTittle"></span>
+                    <br/>
+                    <span class="formInputName">Treść</span>
+
+                    <textarea style="resize: none;" wicket:id="newContent" rows="13" name="content" class="formTextArea"
+                              placeholder="Miejsce na treść (minimum 30 znaków)" id="text"></textarea><br/>
+                    <span class="validation" wicket:id="wrongContent"></span><br />
                     <center>
+                        <input type="button" value="Obraz" id="buttonImg" class="button"/>​
+                        <input type="button" value="Podpis" id="buttonImgText" class="button"/>
+                        <input type="button" value="Kod" id="buttonCode" class="button"/>​
+                        <input type="button" value="Tab" id="buttonTab" class="button"/>​
+                        <input type="button" value="Pogrubienie" id="buttonBold" class="button"/>​
+                        <input type="button" value="Pochylenie" id="buttonIt" class="button"/>​​
+                        <input type="button" value="Wyśrodkowanie" id="buttonCt" class="button"/>
+                        <input type="button" value="URL" id="buttonURL" class="button"/>​
                         <br/><br/>
-                        <input wicket:id="newTittle"
-                               type="text" class="form-control form-control-custom" name="tittle"
-                               placeholder="Tytuł (minimum 5 znaków)">
-                        <br/>
-                        <span class="validation" wicket:id="wrongTittle"></span>
-                        <br/><br/>
-                        <textarea wicket:id="newContent" rows="16" name="content" class="form-control"
-                                  placeholder="Miejsce na treść (minimum 30 znaków)" id="text"></textarea>
-                        <br/>
-                        <span class="validation" wicket:id="wrongContent"></span>
-                        <br/><br/>
-                        <input type="button" value="Obraz" id="buttonImg" class="btn btn-outline-dark"/>​&nbsp;
-                        <input type="button" value="Podpis" id="buttonImgText" class="btn btn-outline-dark"/>​&nbsp;
-                        <input type="button" value="Kod" id="buttonCode" class="btn btn-outline-dark"/>​&nbsp;
-                        <input type="button" value="Tab" id="buttonTab" class="btn btn-outline-dark"/>​&nbsp;
-                        <input type="button" value="Pogrubienie" id="buttonBold" class="btn btn-outline-dark"/>​&nbsp;
-                        <input type="button" value="Pochylenie" id="buttonIt" class="btn btn-outline-dark"/>​​&nbsp;
-                        <input type="button" value="Wyśrodkowanie" id="buttonCt" class="btn btn-outline-dark"/>​​&nbsp;
-                        <input type="button" value="URL" id="buttonURL" class="btn btn-outline-dark"/>​
-                        <br/><br/>
-                        <input type="submit" id="button" name="submit" class="btn btn-primary btn-lg btn-block"
-                               wicket:id="addPost" value="Dodaj"/>
                     </center>
+                    <input type="submit" id="button" name="submit" class="buttonAcc" wicket:id="addPost" value="Dodaj"/>
+                    <br/><br/>
                 </form>
             </div>
             <div class="col-md-1 hidden-xs hidden-sm"></div>
