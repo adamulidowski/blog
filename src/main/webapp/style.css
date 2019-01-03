@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Cinzel');
-@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+
 
 .tittle {
     font-family: 'Lobster', cursive;
@@ -36,8 +37,8 @@
 }
 
 .content {
-    font-size: 16px;
-    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .icon {
@@ -110,7 +111,7 @@
 }
 
 .formInputs {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .validation {
@@ -127,6 +128,7 @@
     white-space: pre-wrap;
     word-wrap: break-word;
     text-align: justify;
+    font-size: 16px;
 }
 
 .button{
