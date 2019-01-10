@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     $("#football").hover(function () {
         var element = document.getElementById("tittle");
-        element.innerHTML = "Futol";
+        element.innerHTML = "Sport";
     });
 
     $("#moviess").hover(function () {

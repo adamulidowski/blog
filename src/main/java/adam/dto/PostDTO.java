@@ -42,10 +42,19 @@ public class PostDTO implements Serializable {
         this.content = content;
     }
 
-    public PostDTO(String tittle, Date postDate, String content) {
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public PostDTO(String tittle, Date postDate, String content, String type) {
         this.tittle = tittle;
         this.postDate = postDate;
         this.content = content;
+        this.type = type;
     }
 
     private static final long serialVersionUID = 1L;
@@ -64,6 +73,9 @@ public class PostDTO implements Serializable {
 
     @Column(name = "Content", length = 65535,columnDefinition="Text")
     private String content;
+
+    @Column(name = "Type", columnDefinition = "VARCHAR(90) NOT NULL")
+    private String type;
 
     public PostDTO() {
     }

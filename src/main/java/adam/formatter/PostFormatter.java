@@ -11,7 +11,8 @@ public class PostFormatter {
     public PostDTO formatPost(PostDTO postToFormat) {
         return new PostDTO(postToFormat.getTittle(),
                 new Date(),
-                formatContent(postToFormat.getContent()));
+                formatContent(postToFormat.getContent()),
+                postToFormat.getType());
     }
 
     private String formatContent(String content){

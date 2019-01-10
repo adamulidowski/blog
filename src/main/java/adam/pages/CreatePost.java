@@ -4,6 +4,8 @@ import adam.dao.api.PostDAO;
 import adam.dto.PostDTO;
 import adam.formatter.PostFormatter;
 import adam.validator.PostValidator;
+import org.apache.wicket.extensions.markup.html.form.select.Select;
+import org.apache.wicket.extensions.markup.html.form.select.SelectOption;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Button;
@@ -40,9 +42,18 @@ public class CreatePost extends WebPage {
         initializeMessages();
         registryForm.add(new TextField<>("newTittle", new PropertyModel<String>(newPost, "tittle")));
         registryForm.add(new TextArea<>("newContent", new PropertyModel<String>(newPost, "content")));
+        Select languages = new Select("type", new PropertyModel<String>(newPost, "type"));
+        registryForm.add(languages);
+        addSelectTypes(languages);
         addSubmitButtonAndSendRegistryForm();
         add(registryForm);
 
+    }
+
+    private void addSelectTypes(Select languages) {
+        languages.add(new SelectOption<>("programming", new Model<String>("Programowanie")));
+        languages.add(new SelectOption<>("sport", new Model<String>("Sport")));
+        languages.add(new SelectOption<>("popculture", new Model<String>("Popkultura")));
     }
 
     private void initializeMessages() {

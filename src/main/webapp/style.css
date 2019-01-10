@@ -191,7 +191,7 @@
 .formTextArea{
     border-radius: 30px;
     background-color: white;
-    width: 100%;
+    width: 60%;
     padding: 1%;
     padding-left: 2%;
     font-size: 16px;
@@ -208,6 +208,28 @@
 .formTextArea:hover{
     box-shadow: grey 0 0 1rem;
 }
+
+.formSelect{
+    border-radius: 30px;
+    background-color: white;
+    width: 30%;
+    padding: 1%;
+    padding-left: 2%;
+    font-size: 16px;
+    outline: none;
+    border-color: transparent;
+    box-shadow: #ededed 0 0 1rem;
+
+}
+
+.formSelect:focus{
+    box-shadow: grey 0 0 1rem;
+}
+
+.formSelect:hover{
+    box-shadow: grey 0 0 1rem;
+}
+
 
 
 .buttons{

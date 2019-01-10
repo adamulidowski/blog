@@ -49,7 +49,7 @@ public class HomePage extends WebPage {
 
     private void addItems(ListItem<PostDTO> item) {
         item.add(new Label("tittle", postDTO.getTittle()));
-        item.add(new Label("postDate", postDTO.getPostDate()));
+        item.add(new Label("postDate", postDTO.getPostDate() +" | " + postDTO.getType()));
         item.add(new Label("content", postDTO.getContent()).setEscapeModelStrings(false));
     }
 
