@@ -1,0 +1,25 @@
+<wicket:panel xmlns:wicket="http://www.w3.org/1999/xhtml">
+    <table class="table" id="postsTable" wicket:id="data">
+        <thead class="tableNav">
+        <tr>
+            <td wicket:id="nav"></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr wicket:id="posts">
+            <td>
+                <center><h2 wicket:id="tittle"></h2>
+                    <h4 wicket:id="postDate"></h4></center>
+                <br/><br/>
+                <div align="justify" wicket:id="content" class="content"> </div>
+                <br/><br/>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot class="tableNav">
+        <tr>
+            <td wicket:id="nav2"></td>
+        </tr>
+        </tfoot>
+    </table>
+</wicket:panel>

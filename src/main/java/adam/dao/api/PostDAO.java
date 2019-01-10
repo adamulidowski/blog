@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface PostDAO extends GenericDAO<PostDTO, Integer> {
 
-    List getAllPostsSortedByDate();
+    List <PostDTO> getAllPostsSortedByDate(String type);
 }
