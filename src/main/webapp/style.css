@@ -42,30 +42,30 @@
 }
 
 .icon {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     opacity: 0.5;
     transition: all 0.3s ease;
 }
 
 .icon:hover {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     opacity: 1;
     transition: all 0.3s ease;
 }
 
 .iconLast {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     margin-right: 50px;
     opacity: 0.5;
     transition: all 0.3s ease;
 }
 
 .iconLast:hover {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     opacity: 1;
     transition: all 0.3s ease;
 }
@@ -153,7 +153,6 @@
     padding-bottom: 1%;
     color:black;
     width: 115px;
-    border-radius: 30px;
     font-size: 12px;
     background-color: white;
     border-color: transparent;
@@ -174,7 +173,6 @@
     outline: none;
     padding-bottom: 1%;
     padding-top: 1%;
-    border-radius: 30px;
     margin-bottom: 2%;
     background-color: white;
     border-color: transparent;
@@ -189,16 +187,13 @@
 }
 
 .formTextArea{
-    border-radius: 30px;
     background-color: white;
-    width: 60%;
+    width: 77.6%;
     padding: 1%;
-    padding-left: 2%;
     font-size: 16px;
     outline: none;
     border-color: transparent;
     box-shadow: #ededed 0 0 1rem;
-
 }
 
 .formTextArea:focus{
@@ -209,12 +204,30 @@
     box-shadow: grey 0 0 1rem;
 }
 
-.formSelect{
-    border-radius: 30px;
+.formTextAreaContent{
     background-color: white;
-    width: 30%;
+    width: 100%;
     padding: 1%;
-    padding-left: 2%;
+    font-size: 16px;
+    outline: none;
+    border-color: transparent;
+    box-shadow: #ededed 0 0 1rem;
+
+}
+
+.formTextAreaContent:focus{
+    box-shadow: grey 0 0 1rem;
+}
+
+.formTextAreaContent:hover{
+    box-shadow: grey 0 0 1rem;
+}
+
+.formSelect{
+    background-color: white;
+    width: 20%;
+    margin-left: 2%;
+    padding: 1%;
     font-size: 16px;
     outline: none;
     border-color: transparent;
@@ -229,8 +242,6 @@
 .formSelect:hover{
     box-shadow: grey 0 0 1rem;
 }
-
-
 
 .buttons{
     width: 100%;
