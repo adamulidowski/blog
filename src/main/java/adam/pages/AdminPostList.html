@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Junior Developer | Blog</title>
+    <link rel="icon" href="icon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="footable.bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="footable.standalone.css" type="text/css">
+    <link href="animate.css" rel="stylesheet" media="screen">
+    <script src="bootstrap.js"></script>
+    <script src="footable.js" type="text/javascript"></script>
+    <script src="tittle.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('table').footable();
+        });
+    </script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row tittle">
+        <div class="col-xs-12" id="tittle">Junior Developer - Blog</div>
+    </div>
+
+    <!-- -->
+    <section>
+        <div class="row posts">
+            <div class="col-md-1 hidden-xs hidden-sm"></div>
+            <div class="col-md-10">
+                <br/>
+                <center>
+                    <div id="icons">
+                        <a href="http://localhost:8080/Home"><img src="homepage.svg" class="icon" id="home"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="http://localhost:8080/ListOfPosts"><img
+                                src="list.svg" class="icon" id="list"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="https://psnprofiles.com/trophies/7364-burnout-paradise-remastered/ada_ski"><img
+                                src="info.svg" class="icon" id="about"></a>
+                    </div>
+                    <br/>
+                </center>
+
+                <table class="table" id="postsTable" data-filter="#filter" wicket:id="data" data-sorting="true">
+                    <thead>
+                    <tr>
+                        <th class="bold"> Tytuł</th>
+                        <th data-breakpoints="xs" class="bold"> Data dodania</th>
+                        <th data-breakpoints="xs" class="bold"> Kategoria</th>
+                        <th class="bold">Usuń</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr wicket:id="posts">
+                        <td wicket:id="tittle"></td>
+                        <td wicket:id="postDate"></td>
+                        <td wicket:id="postType"></td>
+                        <td><a href="#" wicket:id="removePost"><span wicket:id="removePrint"></span></a></td>
+                    </tr>
+                    </tbody>
+                    <tfoot class="tableNav">
+                    <tr>
+                        <td colspan="3" wicket:id="nav"></td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="col-md-1 hidden-xs hidden-sm"></div>
+        </div>
+    </section>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 copyrights">
+            Wykonanie własne.
+            Icons made by
+            <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
+            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0
+                BY</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </div>
+</div>
+</body>
+</html>
