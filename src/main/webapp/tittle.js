@@ -24,6 +24,11 @@ $(document).ready(function () {
         element.innerHTML = "O mnie";
     });
 
+    $("#home").hover(function () {
+        var element = document.getElementById("tittle");
+        element.innerHTML = "Strona główna";
+    });
+
     $("#icons").mouseleave(function () {
         var element = document.getElementById("tittle");
         element.innerHTML = "Junior Developer | Blog";
