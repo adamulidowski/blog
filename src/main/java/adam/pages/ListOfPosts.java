@@ -6,8 +6,10 @@ import org.apache.wicket.ajax.markup.html.navigation.paging.AjaxPagingNavigator;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.PageableListView;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
 public class ListOfPosts extends WebPage {
@@ -48,11 +50,18 @@ public class ListOfPosts extends WebPage {
         item.add(new Label("tittle", postDTO.getTittle()));
         item.add(new Label("postDate", postDTO.getPostDate()));
         item.add(new Label("postType", postDTO.getType()));
+        seePost(item);
     }
 
     private void addContainer() {
         datacontainer.add(pageableListView);
         datacontainer.add(new AjaxPagingNavigator("nav", pageableListView));
         datacontainer.setVersioned(false);
+    }
+
+    private void seePost(ListItem<PostDTO> item){
+        PageParameters postInfo= new PageParameters();
+        postInfo.add("postId", postDTO.getId());
+        item.add(new BookmarkablePageLink<>("SinglePost", SinglePost.class, postInfo));
     }
 }

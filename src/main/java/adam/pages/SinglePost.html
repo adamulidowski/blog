@@ -44,29 +44,13 @@
                     <br/>
                 </center>
 
-                <table class="table" id="postsTable" data-filter="#filter" wicket:id="data" data-sorting="true">
-                    <thead>
-                    <tr>
-                        <th class="bold"> Tytuł</th>
-                        <th data-breakpoints="xs" class="bold"> Data dodania</th>
-                        <th data-breakpoints="xs" class="bold"> Kategoria</th>
-                        <th class="bold"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr wicket:id="posts">
-                        <td wicket:id="tittle"></td>
-                        <td wicket:id="postDate"></td>
-                        <td wicket:id="postType"></td>
-                        <td><a wicket:id="SinglePost" href="SinglePost.html">Czytaj</a></td>
-                    </tr>
-                    </tbody>
-                    <tfoot class="tableNav">
-                    <tr>
-                        <td colspan="3" wicket:id="nav"></td>
-                    </tr>
-                    </tfoot>
-                </table>
+                <div>
+                    <center><h2 wicket:id="tittle"></h2>
+                        <h4 wicket:id="postDate"></h4></center>
+                    <br/><br/>
+                    <div align="justify" wicket:id="content" class="content"></div>
+                    <br/><br/>
+                </div>
             </div>
             <div class="col-md-1 hidden-xs hidden-sm"></div>
         </div>

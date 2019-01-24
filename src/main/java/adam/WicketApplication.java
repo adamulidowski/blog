@@ -3,6 +3,7 @@ package adam;
 import adam.pages.CreatePost;
 import adam.pages.HomePage;
 import adam.pages.ListOfPosts;
+import adam.pages.SinglePost;
 import org.apache.wicket.Session;
 import org.apache.wicket.bean.validation.BeanValidationConfiguration;
 import org.apache.wicket.markup.html.WebPage;
@@ -42,5 +43,6 @@ public class WicketApplication extends WebApplication
 		mountPage("/Home", HomePage.class);
 		mountPage("/CreatePost", CreatePost.class);
 		mountPage("/ListOfPosts", ListOfPosts.class);
+		mountPage("/SinglePost", SinglePost.class);
 	}
 }
