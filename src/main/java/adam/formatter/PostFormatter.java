@@ -15,15 +15,15 @@ public class PostFormatter {
                 postToFormat.getType());
     }
 
-    private String formatContent(String content){
+    public static String formatContent(String content){
         return haveAtLeastOneImage(content) ? formatWithImages(content) : formatOnlyNewLines(content);
     }
 
-    private boolean haveAtLeastOneImage(String content){
+    private static boolean haveAtLeastOneImage(String content){
         return content.contains("[OBRAZ]");
     }
 
-    private String formatOnlyNewLines(String content){
+    private static String formatOnlyNewLines(String content){
         return content.replaceAll("\r\n", "<br />")
                 .replaceAll("\\[T\\]", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
                 .replaceAll("\\[I\\]", "<i>")
@@ -42,7 +42,7 @@ public class PostFormatter {
                 .replaceAll("height=\"[0-9]*\"", "height=\"350\"");
     }
 
-    private String formatWithImages(String content) {
+    private static String formatWithImages(String content) {
         return formatOnlyNewLines(content).replaceAll("\r\n", "<br />")
                       .replaceAll("\\[OBRAZ\\]", "<img src=\"")
                       .replaceAll("\\[/OBRAZ\\]", "\" class=\"postImg\"" + ">");

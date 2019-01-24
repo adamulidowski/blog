@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nowy post</title>
+    <link rel="icon" href="icon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="animate.css" rel="stylesheet" media="screen">
+    <script src="bootstrap.js"></script>
+    <script src="buttons.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row tittle">
+        <div class="col-xs-12">Nowy Post</div>
+    </div>
+
+    <!-- -->
+    <section>
+        <div class="row posts">
+            <div class="col-md-1 hidden-xs hidden-sm"></div>
+            <div class="col-md-10">
+                <form wicket:id="newPostForm" class="formInputs">
+                    <br/>
+                    <input wicket:id="newTittle"
+                           type="text" class="formTextArea" name="tittle">
+
+
+                    <select wicket:id="type" class="formSelect">
+                        <option wicket:id="programming">Programowanie</option>
+                        <option wicket:id="sport">Sport</option>
+                        <option wicket:id="popculture">Popkultura</option>
+                    </select>
+
+                    <br/>
+                    <span class="validation" wicket:id="wrongTittle"></span>
+                    <br/>
+                    <textarea style="resize: none;" wicket:id="newContent" rows="13" name="content" class="formTextAreaContent"
+                              id="text"></textarea><br/>
+                    <span class="validation" wicket:id="wrongContent"></span> <br/>
+                    <div class="buttons">
+                        <input type="button" value="Obraz" id="buttonImg" class="button"/>​
+                        <input type="button" value="Podpis" id="buttonImgText" class="button"/>
+                        <input type="button" value="Kod" id="buttonCode" class="button"/>​
+                        <input type="button" value="Tab" id="buttonTab" class="button"/>​
+                        <input type="button" value="Pogrubienie" id="buttonBold" class="button"/>​
+                        <input type="button" value="Pochylenie" id="buttonIt" class="button"/>​​
+                        <input type="button" value="Wyśrodkowanie" id="buttonCt" class="button"/>
+                        <input type="button" value="URL" id="buttonURL" class="button"/>​
+                    </div>
+
+                    <input type="submit" id="button" name="submit" class="buttonAcc" wicket:id="addPost" value="Dodaj"/>
+                    <br/><br/>
+                </form>
+            </div>
+            <div class="col-md-1 hidden-xs hidden-sm"></div>
+        </div>
+    </section>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 copyrights">
+            Wykonanie własne.
+            Icons made by
+            <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
+            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0
+                BY</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </div>
+</div>
+</body>
+</html>

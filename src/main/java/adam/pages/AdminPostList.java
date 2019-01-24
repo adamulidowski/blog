@@ -6,9 +6,11 @@ import org.apache.wicket.ajax.markup.html.navigation.paging.AjaxPagingNavigator;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.PageableListView;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
 public class AdminPostList extends WebPage {
@@ -49,6 +51,7 @@ public class AdminPostList extends WebPage {
         item.add(new Label("tittle", postDTO.getTittle()));
         item.add(new Label("postDate", postDTO.getPostDate()));
         item.add(new Label("postType", postDTO.getType()));
+        editPost(item);
         deletePost(item, postDTO);
     }
 
@@ -56,6 +59,12 @@ public class AdminPostList extends WebPage {
         datacontainer.add(pageableListView);
         datacontainer.add(new AjaxPagingNavigator("nav", pageableListView));
         datacontainer.setVersioned(false);
+    }
+
+    private void editPost(ListItem<PostDTO> item){
+        PageParameters postInfo= new PageParameters();
+        postInfo.add("postId", postDTO.getId());
+        item.add(new BookmarkablePageLink<>("EditPost", EditPost.class, postInfo));
     }
 
     private void deletePost(ListItem<PostDTO> item, final PostDTO post){

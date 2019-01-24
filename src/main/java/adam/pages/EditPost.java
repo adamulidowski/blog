@@ -14,14 +14,14 @@ import org.apache.wicket.markup.html.form.TextArea;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
-import java.util.Date;
-
 import static adam.formatter.PostFormatter.formatContent;
+import static java.lang.Integer.parseInt;
 
 
-public class CreatePost extends WebPage {
+public class EditPost extends WebPage {
 
     private static final long serialVersionUID = 2586676420597986366L;
 
@@ -40,8 +40,12 @@ public class CreatePost extends WebPage {
     private Label wrongContent;
 
 
-    public CreatePost() {
-        newPost = new PostDTO();
+    public EditPost(PageParameters pageParameters) {
+        super(pageParameters);
+        newPost = postDAO.getById(parseInt(pageParameters.get("postId").toString()));
+        String content = newPost.getContent();
+        newPost.setContent(content.replaceAll("<br />", "\r\n"));
+
         registryForm = new Form<>("newPostForm");
         initializeMessages();
         registryForm.add(new TextField<>("newTittle", new PropertyModel<String>(newPost, "tittle")));
@@ -92,10 +96,9 @@ public class CreatePost extends WebPage {
             wrongContent.setVisible(true);
             wrongTittle.setVisible(false);
         } else {
-            postDAO.save(new PostDTO(newPost.getTittle(),
-                    new Date(),
-                    formatContent(newPost.getContent()),
-                    newPost.getType()));
+            String newContent = formatContent(newPost.getContent());
+            newPost.setContent(newContent);
+            postDAO.update(newPost);
             setResponsePage(HomePage.class);
         }
     }

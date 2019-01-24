@@ -50,6 +50,7 @@
                         <th class="bold"> Tytuł</th>
                         <th data-breakpoints="xs" class="bold"> Data dodania</th>
                         <th data-breakpoints="xs" class="bold"> Kategoria</th>
+                        <th class="bold">Edytuj</th>
                         <th class="bold">Usuń</th>
                     </tr>
                     </thead>
@@ -58,12 +59,13 @@
                         <td wicket:id="tittle"></td>
                         <td wicket:id="postDate"></td>
                         <td wicket:id="postType"></td>
+                        <td><a wicket:id="EditPost" href="EditPost.html">Edytuj</a></td>
                         <td><a href="#" wicket:id="removePost"><span wicket:id="removePrint"></span></a></td>
                     </tr>
                     </tbody>
                     <tfoot class="tableNav">
                     <tr>
-                        <td colspan="3" wicket:id="nav"></td>
+                        <td colspan="5" wicket:id="nav"></td>
                     </tr>
                     </tfoot>
                 </table>
