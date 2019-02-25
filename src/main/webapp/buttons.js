@@ -44,4 +44,14 @@ $(document).ready(function () {
         text.value += '<a href="URL">Tekst</a>';
         text.focus();
     });
+    document.getElementById("buttonOl").addEventListener('click', function () {
+        var text = document.getElementById('text');
+        text.value += '<ul> <li>Punkt pierwszy</li> <li>Punkt drugi</li> </ul>';
+        text.focus();
+    });
+    document.getElementById("buttonOl").addEventListener('click', function () {
+        var text = document.getElementById('text');
+        text.value += '<ol> <li>Punkt pierwszy</li> <li>Punkt drugi</li> </ol>';
+        text.focus();
+    });
 });
