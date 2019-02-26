@@ -2,6 +2,7 @@ package adam.pages;
 
 import adam.dao.api.PostDAO;
 import adam.dto.PostDTO;
+import adam.session.UserSession;
 import org.apache.wicket.ajax.markup.html.navigation.paging.AjaxPagingNavigator;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
@@ -26,6 +27,9 @@ public class AdminPostList extends WebPage {
     private PostDAO postDAO;
 
     public AdminPostList() {
+        if (UserSession.getInstance().getUserModel() == null) {
+            setResponsePage(LoginPage.class);
+        }
         createContainer();
         pageableListView = new PageableListView<PostDTO>("posts", postDAO.getAll(), 5) {
 
@@ -39,6 +43,16 @@ public class AdminPostList extends WebPage {
 
         };
         addContainer();
+        add(new Link<String>("signOut") {
+
+            private static final long serialVersionUID = 2586676420597986366L;
+
+            @Override
+            public void onClick() {
+                UserSession.getInstance().invalidate();
+                setResponsePage(HomePage.class);
+            }
+        });
     }
 
     private void createContainer() {
@@ -61,13 +75,13 @@ public class AdminPostList extends WebPage {
         datacontainer.setVersioned(false);
     }
 
-    private void editPost(ListItem<PostDTO> item){
-        PageParameters postInfo= new PageParameters();
+    private void editPost(ListItem<PostDTO> item) {
+        PageParameters postInfo = new PageParameters();
         postInfo.add("postId", postDTO.getId());
         item.add(new BookmarkablePageLink<>("EditPost", EditPost.class, postInfo));
     }
 
-    private void deletePost(ListItem<PostDTO> item, final PostDTO post){
+    private void deletePost(ListItem<PostDTO> item, final PostDTO post) {
 
         Label removePrint = new Label("removePrint", "Usuń");
         final Link removePost = new Link<Object>("removePost") {

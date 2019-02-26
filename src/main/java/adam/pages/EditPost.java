@@ -3,6 +3,7 @@ package adam.pages;
 import adam.dao.api.PostDAO;
 import adam.dto.PostDTO;
 import adam.formatter.PostFormatter;
+import adam.session.UserSession;
 import adam.validator.PostValidator;
 import org.apache.wicket.extensions.markup.html.form.select.Select;
 import org.apache.wicket.extensions.markup.html.form.select.SelectOption;
@@ -42,6 +43,9 @@ public class EditPost extends WebPage {
 
     public EditPost(PageParameters pageParameters) {
         super(pageParameters);
+        if(UserSession.getInstance().getUserModel()==null){
+            setResponsePage(LoginPage.class);
+        }
         newPost = postDAO.getById(parseInt(pageParameters.get("postId").toString()));
         String content = newPost.getContent();
         newPost.setContent(content.replaceAll("<br />", "\r\n"));

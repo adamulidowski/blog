@@ -1,6 +1,7 @@
 package adam;
 
 import adam.pages.*;
+import adam.session.UserSession;
 import org.apache.wicket.Session;
 import org.apache.wicket.bean.validation.BeanValidationConfiguration;
 import org.apache.wicket.markup.html.WebPage;
@@ -26,7 +27,7 @@ public class WicketApplication extends WebApplication {
 
     @Override
     public Session newSession(Request request, Response response) {
-        return new WebSession(request);
+        return new UserSession(request);
     }
 
     @Override
@@ -40,5 +41,6 @@ public class WicketApplication extends WebApplication {
         mountPage("/AdminPostList", AdminPostList.class);
         mountPage("/SinglePost", SinglePost.class);
         mountPage("/EditPost", EditPost.class);
+        mountPage("/LoginPage", LoginPage.class);
     }
 }
