@@ -38,7 +38,7 @@ public class LoginPage extends WebPage {
                 String typed = Hashing.sha256()
                         .hashString(userModel.getPswd(), StandardCharsets.UTF_8)
                         .toString();
-                String expected ="7862d3580cb9b7f89086b717e00e78bcb2534b5f3b559721dbf7d7871dce540c";
+                String expected ="dcc0bd36ea166de3bb90171e5a20276c7882e727c2ab6249122c4ebc942877b9";
                 if (userModel.getName().equalsIgnoreCase("programista3546") &&
                         typed.equals(expected)) {
                     UserSession.getInstance().setUserModel(userModel);
